@@ -26,7 +26,8 @@ namespace Kreta.ViewModel
         public StudentOfClassViewModel()
         {
             selectedIndex = 0;
-            StudentNoClassCommand = new RelayCommand(execute => ShowStudentNoClass());        
+            StudentNoClassCommand = new RelayCommand(execute => ShowStudentNoClass());
+            StudentToClassCommand = new RelayCommand(execute => MoveStudentToClass());
 
 
             studentOfClassService = new StudentOfClassService();
