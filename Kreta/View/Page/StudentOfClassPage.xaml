@@ -32,7 +32,10 @@
                          ItemsSource="{Binding StudentOfNoClass}"
                          
                  />
-                <Button Margin="5" x:Name="btStudentToClass" Content="Kiválasztott diák hozzáadása" />
+                <Button Margin="5" x:Name="btStudentToClass" 
+                        Content="Kiválasztott diák hozzáadása"
+                        Command="{Binding StudentToClassCommand}"
+                        />
             </StackPanel>
         </StackPanel>
     </StackPanel>
