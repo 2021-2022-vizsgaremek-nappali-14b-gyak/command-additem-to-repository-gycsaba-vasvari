@@ -108,5 +108,10 @@ namespace Kreta.ViewModel
         }
 
         public RelayCommand StudentToClassCommand { get; set; }
+
+        public void MoveStudentToClass()
+        {
+
+        }
     }
 }
