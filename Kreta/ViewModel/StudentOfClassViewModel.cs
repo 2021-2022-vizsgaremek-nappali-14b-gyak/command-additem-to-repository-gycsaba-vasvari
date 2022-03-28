@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using Kreta.Services;
 using ViewModels.BaseClass;
 using Kreta.Models;
-
+using System.Diagnostics;
 
 namespace Kreta.ViewModel
 {
@@ -20,7 +20,7 @@ namespace Kreta.ViewModel
 
         private StudentOfClassService studentOfClassService;
         private SchoolClass selectedSchoolClass;
-        
+
         private int selectedIndex;
 
         public StudentOfClassViewModel()
@@ -52,7 +52,7 @@ namespace Kreta.ViewModel
             {
                 if (selectedSchoolClass != null)
                 {
-                    List<Student> studentOfClassList = studentOfClassService.GetStudentOfClass(SelectedScooolClass.Id);
+                    List<Student> studentOfClassList = studentOfClassService.GetStudentOfClass(selectedSchoolClass.Id);
                     studentsOfClass.Clear();
                     studentsOfClass = new ObservableCollection<Student>(studentOfClassList);
                     return studentsOfClass;
@@ -112,12 +112,17 @@ namespace Kreta.ViewModel
         public void MoveStudentToClass()
         {
             // Melyik diákot kell osztályba sorolni
+            Debug.WriteLine("Kiválasztott diák akinek nincs osztálya:" +SelectedStudentNoClass);
+            if (SelectedStudentNoClass != null)
+            {
+                // Ha van ilyen diák akkor módosítani a diák osztály-id-jét
 
-            // Ha van ilyen diák akkor módosítani a diák osztály-id-jét
+                // Frissíteni kell az osztály diákjainak listáját
 
-            // Frissíteni kell az osztály diákjainak listáját
-
-            // Frittíteni kell az osztályba be nem sorolt diákok listáját
+                // Frittíteni kell az osztályba be nem sorolt diákok listáját
+            }
         }
+
+        public Student SelectedStudentNoClass { get; set; }        
     }
 }

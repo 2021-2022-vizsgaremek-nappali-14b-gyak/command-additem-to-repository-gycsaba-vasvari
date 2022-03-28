@@ -30,7 +30,7 @@
                 />
                 <ListBox Margin="5" x:Name="lbStudentNoClass"
                          ItemsSource="{Binding StudentOfNoClass}"
-                         
+                         SelectedItem="{Binding SelectedStudentNoClass}"                         
                  />
                 <Button Margin="5" x:Name="btStudentToClass" 
                         Content="Kiválasztott diák hozzáadása"
