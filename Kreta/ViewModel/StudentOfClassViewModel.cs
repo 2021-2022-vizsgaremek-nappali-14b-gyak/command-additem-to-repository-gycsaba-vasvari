@@ -111,7 +111,13 @@ namespace Kreta.ViewModel
 
         public void MoveStudentToClass()
         {
+            // Melyik diákot kell osztályba sorolni
 
+            // Ha van ilyen diák akkor módosítani a diák osztály-id-jét
+
+            // Frissíteni kell az osztály diákjainak listáját
+
+            // Frittíteni kell az osztályba be nem sorolt diákok listáját
         }
     }
 }
